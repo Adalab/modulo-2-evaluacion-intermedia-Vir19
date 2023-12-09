@@ -16,14 +16,17 @@ function compareNumbers(userNumber, randomNumber) {
     else if (userNumber < randomNumber) {
       clueNumber.innerHTML = 'Demasiado bajo';
     }
-    else {
+    else if (userNumber === randomNumber) {
       clueNumber.innerHTML = '¡¡Has ganado, champiñona!!';
+    }
+    else {
+      clueNumber.innerHTML = 'El número debe estar entre 1 y 100'
     }
 }
 
  let randomNumber = getRandomNumber(100);
  console.log(randomNumber);
- let trys = 'Número de intentos: 0';
+ let attempts = 0;
 
 
 //   EVENTOS
@@ -32,6 +35,9 @@ testButton.addEventListener('click', (event) => {
   event.preventDefault();
   const userNumber = parseInt(inputNumber.value);
   console.log(randomNumber);
- compareNumbers(userNumber, randomNumber);
 
+  attempts ++;
+
+ compareNumbers(userNumber, randomNumber);
+ attemptsCounter.innerHTML = `Número de intentos: ${attempts}`;
 });
