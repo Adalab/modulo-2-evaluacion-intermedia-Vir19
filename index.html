@@ -6,18 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evaluación intermedia Vir</title>
   <link rel="stylesheet" href="./styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Kalnia:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>Adivina el número</h1>
+    <h1 class="title">Adivina el número</h1>
   </header>
   <main>
     <form>
       <input type="number" placeholder="Introduce aquí tu número" id="input_number" />
-      <input class="js__testButton" type="button" value="Prueba">
-      <legend class="js__clueNumber">Escribe el número y dale a Prueba</legend>
-      <legend class="js__attemptsCounter">Número de intentos: 0</legend>
+      <input class="js__testButton button" type="button" value="Prueba">
+      <div class="text_container">
+        <legend class="js__clueNumber text">Escribe el número y dale a Prueba</legend>
+        <legend class="js__attemptsCounter text">Número de intentos: 0</legend>
+      </div>
     </form>
   </main>
   <script src="./js/main.js"></script>
