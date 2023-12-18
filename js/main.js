@@ -12,7 +12,10 @@ function getRandomNumber(max) {
    return randomNumber;
  }
 function compareNumbers(userNumber, randomNumber) {
-  if (userNumber > randomNumber) {
+  if(userNumber > 100 || userNumber < 0) {
+    clueNumber.innerHTML = 'El número debe estar entre 1 y 100';
+  }
+    else if (userNumber > randomNumber) {
     clueNumber.innerHTML = 'Demasiado alto';
     }
     else if (userNumber < randomNumber) {
@@ -21,9 +24,7 @@ function compareNumbers(userNumber, randomNumber) {
     else if (userNumber === randomNumber) {
       clueNumber.innerHTML = '¡¡Has ganado, champiñona!!';
     }
-    else {
-      clueNumber.innerHTML = 'El número debe estar entre 1 y 100'
-    }
+
 }
 
  let randomNumber = getRandomNumber(100);
