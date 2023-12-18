@@ -1,10 +1,15 @@
 'use strict';
 
-//   VARIABLES
+//   QUERY SELECTOR
 const testButton = document.querySelector('.js__testButton');
 let clueNumber = document.querySelector('.js__clueNumber');
 let attemptsCounter = document.querySelector('.js__attemptsCounter');
 const inputNumber = document.getElementById ('input_number');
+
+//   VARIABLES GLOBALES
+let randomNumber = getRandomNumber(100);
+console.log(randomNumber);
+let attempts = 0;
 
 //   FUNCIONES
 function getRandomNumber(max) {
@@ -27,10 +32,10 @@ function compareNumbers(userNumber, randomNumber) {
 
 }
 
- let randomNumber = getRandomNumber(100);
- console.log(randomNumber);
- let attempts = 0;
-
+function numberOfAttempts () {
+  attempts ++;
+  attemptsCounter.innerHTML = `Número de intentos: ${attempts}`;
+}
 
 //   EVENTOS
 
@@ -38,9 +43,6 @@ testButton.addEventListener('click', (event) => {
   event.preventDefault();
   const userNumber = parseInt(inputNumber.value);
   console.log(randomNumber);
-
-  attempts ++;
-
  compareNumbers(userNumber, randomNumber);
- attemptsCounter.innerHTML = `Número de intentos: ${attempts}`;
+ numberOfAttempts();
 });
