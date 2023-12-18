@@ -1,3 +1,5 @@
+'use strict';
+
 //   VARIABLES
 const testButton = document.querySelector('.js__testButton');
 let clueNumber = document.querySelector('.js__clueNumber');
